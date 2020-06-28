@@ -40,5 +40,5 @@
     #   ignore_errors: yes
 
 - name: Add current user to docker group
-  command: groupadd docker && usermod -aG docker {{ ansible_env.SUDO_USER }} && chmod 666 /var/run/docker.sock
+  command: groupadd docker && usermod -aG docker {{ansible_env.SUDO_USER}} && chmod 666 /var/run/docker.sock
   

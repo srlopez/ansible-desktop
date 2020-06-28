@@ -1,0 +1,12 @@
+# Instrucciones de instalación 
+
+# https://dennisnotes.com/note/20180614-ubuntu-18.04-qemu-setup/
+- name: QEMU KVM
+  apt: name={{ item }} state=latest
+  loop: [ 'qemu-kvm', 'libvirt-bin', 'bridge-utils', 'virt-manager', 'qemu', 'virt-viewer', 'spice-vdagent' ]
+
+# https://code.visualstudio.com/docs/setup/linux  
+- name: Install VSCode
+  snap:
+    name: code
+    classic: yes

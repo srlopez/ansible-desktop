@@ -7,4 +7,5 @@
   
 - name: Show user
   debug:
-    msg: "{{ ansible_env.SUDO_USER }}"
+    # Mostramos el usuario que se ha convertido en root
+    msg: "{{ansible_env.SUDO_USER}}"
