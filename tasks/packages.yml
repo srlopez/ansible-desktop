@@ -1,12 +1,19 @@
----
-
 - name: Install packages 
-  gather_facts: true 
-  become: true
-  tasks: 
-    - name: Doing a ping
-      ping:
-
-    - name: Show info
-      debug:
-        msg: "Machine name: {{ ansible_hostname }}"
+  vars: 
+    packages:
+      - gparted 
+      - udftools
+      - remmina 
+      - openssh-server
+      - gnome-terminal
+      - git
+      - curl 
+      - wget
+      - apt-transport-https
+      - ca-certificates
+      - gnupg-agent
+      - software-properties-common
+  
+    
+  apt: 
+    name: "{{ packages }}"
