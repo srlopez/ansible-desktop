@@ -7,7 +7,7 @@
       changed_when: false
   tasks:
     - include: tasks/test.yml
-    - include: tasks/packages.yml
-    - include: tasks/docker.yml
+    # - include: tasks/packages.yml
+    # - include: tasks/docker.yml
     - include: tasks/tools.yml
 

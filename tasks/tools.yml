@@ -10,3 +10,12 @@
   snap:
     name: code
     classic: yes
+
+- name: Install the package Inkscape
+  apt:
+    name: inkscape
+
+- name: Install a Discord package
+  apt:
+    deb: https://discord.com/api/download?platform=linux&format=deb
+    

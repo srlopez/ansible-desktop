@@ -1,0 +1,4 @@
+# https://snapcraft.io/install/vimix-themes/mint
+- name: Install Vimix Themes for Snaps
+  snap:
+    name: vimix-themes
