@@ -1,1 +1,3 @@
 sudo ansible-pull -U https://github.com/srlopez/ansible-desktop.git
+
+ansible-playbook local.yml
