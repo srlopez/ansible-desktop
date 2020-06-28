@@ -7,13 +7,6 @@
       - openssh-server
       - gnome-terminal
       - git
-      - curl 
       - wget
-      - apt-transport-https
-      - ca-certificates
-      - gnupg-agent
-      - software-properties-common
-  
-    
   apt: 
     name: "{{ packages }}"

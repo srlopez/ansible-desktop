@@ -1,0 +1,44 @@
+# Instrucciones de instalación oficiales
+# https://docs.docker.com/engine/install/ubuntu/
+# https://gist.github.com/rbq/886587980894e98b23d0eee2a1d84933
+
+- name: Install packages to allow apt to use a repository over HTTPS
+  apt: name={{ item }} state=latest
+  loop: [ 'apt-transport-https', 'ca-certificates', 'curl', 'gnupg-agent', 'software-properties-common' ]
+
+- name: Add Docker official GPG key
+  apt_key:
+    state: present
+    keyserver: 'https://download.docker.com/linux/{{ansible_distribution|lower}}/gpg'
+    id: 7EA0A9C3F273FCD8
+
+# id obtenido mediante
+# curl -fsSL https://download.docker.com/linux/ubuntu/gpg \
+#     | gpg --keyid-format long 2>/dev/null \
+#     | grep sub \
+#     | cut -d'/' -f2 \
+#     | cut -d' ' -f1
+
+- name: check Docker apt key has not been altered
+  command: apt-key fingerprint 0EBFCD88
+  register: fingerprint_check
+  changed_when: False
+  failed_when: "'9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88' not in fingerprint_check.stdout"
+
+- name: Add Docker APT repository
+  apt_repository:
+    repo: deb [arch=amd64] https://download.docker.com/linux/{{ansible_distribution|lower}} {{ansible_distribution_release}} stable
+    state: present
+
+- name: Install Docker and Compose
+  apt: name={{ item }} state=latest update_cache=yes
+  loop: [ 'docker-ce', 'docker-ce-cli', 'containerd.io', 'docker-compose' ]
+
+# https://docs.docker.com/compose/install/
+    # - name: Install Docker-compose
+    #   shell: curl -L "https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose && ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+    #   ignore_errors: yes
+
+- name: Add current user to docker group
+  command: groupadd docker && usermod -aG docker {{ ansible_env.SUDO_USER }} && chmod 666 /var/run/docker.sock
+  

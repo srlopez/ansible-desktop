@@ -3,4 +3,8 @@
 
 - name: Show info
   debug:
-    msg: "Machine name: {{ ansible_hostname }}"
+    msg: "Machine {{ansible_hostname}}: {{ansible_distribution}} {{ansible_distribution_release}}"
+  
+- name: Show user
+  debug:
+    msg: "{{ ansible_env.SUDO_USER }}"
