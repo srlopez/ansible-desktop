@@ -1,17 +1,20 @@
 # https://code.visualstudio.com/docs/setup/linux  
-- name: Install VSCode
+- name: Install snap VSCode
   snap:
     name: code
     classic: yes
 
-- name: Install the package Inkscape
-  apt:
-    name: inkscape
+- name: Install snap's apps
+  snap:
+    name:
+      - inkscape
+      - foliate
+      - vlc
 
-- name: Install a Discord package
+- name: Install Discord 
   apt:
     deb: https://discord.com/api/download?platform=linux&format=deb
-
+ 
 # https://dennisnotes.com/note/20180614-ubuntu-18.04-qemu-setup/
 - name: QEMU KVM
   apt: name={{ item }} state=latest

@@ -1,4 +1,2 @@
-# https://snapcraft.io/install/vimix-themes/mint
-- name: Install Vimix Themes for Snaps
-  snap:
-    name: vimix-themes
+# sudo apt install gir1.2-clutter-1.0
+# https://extensions.gnome.org/extension/1476/unlock-dialog-background/

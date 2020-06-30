@@ -7,7 +7,10 @@
       changed_when: false
   tasks:
     - include: tasks/test.yml
-    - include: tasks/packages.yml
-    - include: tasks/docker.yml
+    # - include: tasks/packages.yml
+    # - include: tasks/docker.yml
     - include: tasks/tools.yml
-
+    #- include: tasks/samba.yml
+  post_tasks:
+    - name: Snap update
+      command: snap refresh
