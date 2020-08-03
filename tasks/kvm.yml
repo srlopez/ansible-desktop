@@ -1,0 +1,5 @@
+# https://dennisnotes.com/note/20180614-ubuntu-18.04-qemu-setup/
+- name: QEMU KVM
+  apt: name={{ item }} state=latest
+  loop: [ 'qemu-kvm',  'bridge-utils', 'virt-manager', 'qemu', 'virt-viewer', 'spice-vdagent' ]
+  #'libvirt-bin',  

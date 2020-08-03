@@ -1,3 +1,6 @@
+# Instalación del equipo host con las herramitentas que se necesitan
+
 sudo ansible-pull -U https://github.com/srlopez/ansible-desktop.git
 
+# Ejecutamos con el siguiente comando
 sudo ansible-playbook local.yml
