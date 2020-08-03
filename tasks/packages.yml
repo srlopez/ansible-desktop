@@ -8,5 +8,6 @@
       - gnome-terminal
       - git
       - wget
+      - whois
   apt: 
     name: "{{ packages }}"

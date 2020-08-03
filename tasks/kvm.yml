@@ -3,3 +3,13 @@
   apt: name={{ item }} state=latest
   loop: [ 'qemu-kvm',  'bridge-utils', 'virt-manager', 'qemu', 'virt-viewer', 'spice-vdagent' ]
   #'libvirt-bin',  
+
+  # - qemu-kvm 
+  # - bridge-utils
+  # - libvirt-daemon-system 
+  # - libvirt-clients 
+  # - virtinst  
+
+  # - python-libvirt
+  # - python-lxml
+  # - cloud-image-utils
