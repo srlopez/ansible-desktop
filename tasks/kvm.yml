@@ -4,12 +4,13 @@
   loop: [ 'qemu-kvm',  'bridge-utils', 'virt-manager', 'qemu', 'virt-viewer', 'spice-vdagent' ]
   #'libvirt-bin',  
 
-  # - qemu-kvm 
-  # - bridge-utils
-  # - libvirt-daemon-system 
-  # - libvirt-clients 
-  # - virtinst  
-
+  # qemu - A generic machine emulator and virtualizer,
+  # qemu-kvm - QEMU metapackage for KVM support (i.e. QEMU Full virtualization on x86 hardware),
+  # libvirt-clients - programs for the libvirt library,
+  # libvirt-daemon-system - Libvirt daemon configuration files,
+  # virtinst - programs to create and clone virtual machines,
+  # bridge-utils - utilities for configuring the Linux Ethernet bridge.
   # - python-libvirt
   # - python-lxml
   # - cloud-image-utils
+  
