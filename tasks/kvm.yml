@@ -1,7 +1,7 @@
 # https://dennisnotes.com/note/20180614-ubuntu-18.04-qemu-setup/
 - name: QEMU KVM
   apt: name={{ item }} state=latest
-  loop: [ 'qemu-kvm',  'bridge-utils', 'virt-manager', 'qemu', 'virt-viewer', 'spice-vdagent' ]
+  loop: [ 'qemu-kvm',  'bridge-utils', 'virt-manager', 'qemu', 'virt-viewer', 'spice-vdagent'. 'libguestfs-tools' ]
   #'libvirt-bin',  
 
   # qemu - A generic machine emulator and virtualizer,
@@ -10,7 +10,8 @@
   # libvirt-daemon-system - Libvirt daemon configuration files,
   # virtinst - programs to create and clone virtual machines,
   # bridge-utils - utilities for configuring the Linux Ethernet bridge.
+  # libguestfs-tools -  resize y utilidades
   # - python-libvirt
   # - python-lxml
   # - cloud-image-utils
-  
+
